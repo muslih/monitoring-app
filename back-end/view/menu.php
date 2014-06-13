@@ -2,13 +2,19 @@
         <div class="sidebar-collapse">
             <ul class="nav" id="side-menu">
                 <li>
-                    <a href="#"><i class="fa fa-sitemap fa-fw"></i> Master<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-sitemap fa-fw"></i> Data Master<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="#">Buat</a>
+                            <a href="?page=produk">Master Produk</a>
                         </li>
                         <li>
-                            <a href="#">Modif</a>
+                            <a href="#">Master Pengelola Layanan</a>
+                        </li>
+                        <li>
+                            <a href="#">Master Permintaan</a>
+                        </li>
+                        <li>
+                            <a href="#">Master User</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
