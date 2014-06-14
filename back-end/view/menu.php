@@ -19,7 +19,9 @@
                     </ul>
                     <!-- /.nav-second-level -->
                 </li>
-                
+                <li>
+                    <a href="?page=pelanggan"><i class="fa fa-group fa-fw"></i> Pelanggan</span></a>
+                </li>
                 <li>
                     <a href="#"><i class="fa fa-files-o fa-fw"></i> Pegawai<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
