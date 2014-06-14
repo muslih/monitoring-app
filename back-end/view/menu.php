@@ -23,16 +23,19 @@
                     <a href="?page=pelanggan"><i class="fa fa-group fa-fw"></i> Pelanggan</span></a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-files-o fa-fw"></i> Pegawai<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-list fa-fw"></i> Permintaan</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-files-o fa-fw"></i> Akun<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="blank.html">Buat</a>
+                            <a href="#">Profil</a>
                         </li>
                         <li>
-                            <a href="login.html">Daftar</a>
+                            <a href="#">Pengaturan</a>
                         </li>
                         <li>
-                            <a href="login.html">Modif</a>
+                            <a href="#">Keluar</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->

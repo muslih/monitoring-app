@@ -1,6 +1,7 @@
 $(function() {
 
     $('#side-menu').metisMenu();
+    $('[rel=tooltip]').tooltip() 
 
 });
 
@@ -16,3 +17,5 @@ $(function() {
         }
     })
 })
+
+
