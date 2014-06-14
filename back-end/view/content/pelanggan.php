@@ -48,17 +48,17 @@
              <!-- /.panel-body -->
             
             <div class="panel-footer">
-                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#tambahPelanggan">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahPelanggan">
                     Tambah Pelanggan
                 </button>
             </div>
              <!-- modal #tambahPelanggan -->
-             <div class="modal fade" id="tambahModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+             <div class="modal fade" id="tambahPelanggan" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <h4 class="modal-title" id="myModalLabel">Tambah Pelanggans</h4>
+                            <h4 class="modal-title" id="myModalLabel">Tambah Pelanggan</h4>
                         </div>
                         <div class="modal-body">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
