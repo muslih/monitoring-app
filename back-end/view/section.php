@@ -5,10 +5,10 @@
 		// $page = basename($action);
 
 		// cek apakah ada file yang dicari pada method yang ada
-		if (file_exists("view/content/".$page."php")) {
+		if (file_exists("view/content/".$page.".php")) {
 
 			// bila ada panggil
-			include("view/content/".$page."php");
+			include("view/content/".$page.".php");
 		}else{
 			// bila file tidak ditemukan panggil halaman error 404
 			include("view/content/404.php");
