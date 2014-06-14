@@ -23,7 +23,7 @@
                     <a href="?page=pelanggan"><i class="fa fa-group fa-fw"></i> Pelanggan</span></a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-list fa-fw"></i> Permintaan</a>
+                    <a href="?page=permintaan"><i class="fa fa-list fa-fw"></i> Permintaan</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-files-o fa-fw"></i> Akun<span class="fa arrow"></span></a>
