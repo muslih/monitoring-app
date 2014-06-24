@@ -14,14 +14,14 @@
 			include("view/content/404.php");
 		}
 	}else{
+		include("view/content/main.php");
 		// kalo method get g ada
-		if ($_SERVER['PHP_SELF'] == "/index.php") {
+		// if ($_SERVER['PHP_SELF'] == "/index.php") {
 
-			// masukan halaman main
-			include("view/content/main.php");
-		}else{
-			// panggil halaman 404 error
-			include("view/content/404.php");
-		}
-	}	
+		// 	// masukan halaman main
+		// 	include("view/content/main.php");
+		// }else{
+		// 	// panggil halaman 404 error
+		// 	include("view/content/404.php");
+		// }
 ?>
