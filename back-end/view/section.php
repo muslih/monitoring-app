@@ -23,5 +23,5 @@
 		// }else{
 		// 	// panggil halaman 404 error
 		// 	include("view/content/404.php");
-		// }
+	}
 ?>

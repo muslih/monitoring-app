@@ -10,4 +10,14 @@ try {
 	echo "Error : ".$e->getMessage();
 }
 
- ?>
+
+
+function cek_gender($gen){
+  if($gen == "L" || $gen == "l"){
+    return "Laki-laki"
+  }elseif ($gen == "P" || $gen == "p") {
+   return "Perempuan"
+  }else{
+    return "Tidak terdeteksi"
+  }
+}
