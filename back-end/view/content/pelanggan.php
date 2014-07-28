@@ -1,3 +1,111 @@
+<!-- tambah data -->
+<?php 
+if (isset($_POST['simpan']) && $_POST['simpan'] == 'Tambah') {
+    $tipe_id = $_POST['tipe_id'];
+    $gelar = $_POST['gelar'];
+    $nama = $_POST['nama'];
+    $gender_id =$_POST['gender_id'];
+    $alamat = $_POST['alamat'];
+    $rt = $_POST['rt'];
+    $kota = $_POST['kota'];
+    $kelurahan = $_POST['kelurahan'];
+    $kontak = $_POST['kontak'];
+    $alamat_tambahan = $_POST['alamat_tambahan'];
+    $no_pelanggan = $_POST['no_pelanggan'];
+
+    // echo "dipost ment";
+
+    // lakukan penyimpanan ke dalam database
+    
+    if (Pelanggan::create(array(
+        "tipe_id" => $tipe_id,
+        "gelar" => $gelar,
+        "nama" => $nama,
+        "gender_id" => $gender_id,
+        "alamat" => $alamat,
+        "rt" => $rt,
+        "kota" => $kota,
+        "kelurahan" => $kelurahan,
+        "kontak" => $kontak,
+        "alamat_tambahan" => $alamat_tambahan,
+        "no_pelanggan" => $no_pelanggan
+      ))){
+        header('location:index.php?page=pelanggan&pesansukses=true');
+    }else{
+        header('location:index.php??page=pelanggan&pesansukses=false');
+    }
+}elseif (isset($_POST['update']) && $_POST['update'] == 'Update') {
+
+    $tipe_id = $_POST['tipe_id'];
+    $gelar = $_POST['gelar'];
+    $nama = $_POST['nama'];
+    $gender_id =$_POST['gender_id'];
+    $alamat = $_POST['alamat'];
+    $rt = $_POST['rt'];
+    $kota = $_POST['kota'];
+    $kelurahan = $_POST['kelurahan'];
+    $kontak = $_POST['kontak'];
+    $alamat_tambahan = $_POST['alamat_tambahan'];
+    $no_pelanggan = $_POST['no_pelanggan'];
+
+    // echo "dipost ment";
+
+    // lakukan penyimpanan ke dalam database
+    // echo "ID nya adalah".;
+
+    $data = Pelanggan::find($_GET['update']);
+
+    if($data->update_attributes(array(
+        "tipe_id" => $tipe_id,
+        "gelar" => $gelar,
+        "nama" => $nama,
+        "gender_id" => $gender_id,
+        "alamat" => $alamat,
+        "rt" => $rt,
+        "kota" => $kota,
+        "kelurahan" => $kelurahan,
+        "kontak" => $kontak,
+        "alamat_tambahan" => $alamat_tambahan,
+        "no_pelanggan" => $no_pelanggan
+    ))){
+        header('location:index.php?page=pelanggan&pesansukses=true');
+    }else{
+        header('location:index.php??page=pelanggan&pesansukses=false');
+    }
+    
+    // if (Pelanggan::update(array(
+    //     "tipe_id" => $tipe_id,
+    //     "gelar" => $gelar,
+    //     "nama" => $nama,
+    //     "gender_id" => $gender_id,
+    //     "alamat" => $alamat,
+    //     "rt" => $rt,
+    //     "kota" => $kota,
+    //     "kelurahan" => $kelurahan,
+    //     "kontak" => $kontak,
+    //     "alamat_tambahan" => $alamat_tambahan,
+    //     "no_pelanggan" => $no_pelanggan
+    //   ))){
+    //     header('location:index.php?page=pelanggan&pesansukses=true');
+    // }else{
+    //     header('location:index.php??page=pelanggan&pesansukses=false');
+    // }
+}elseif (isset($_POST['hapus']) && $_POST['hapus'] == 'Hapus') {
+     $data = Pelanggan::find($_GET['hapus']);
+
+    if($data->delete()){
+        header('location:index.php?page=pelanggan&pesansukses=true&pesan=data%20berhasil%20di%20hapus');
+    }else{
+        header('location:index.php??page=pelanggan&pesansukses=false&pesan=data%20gagal%20di%20hapus');
+    }
+    
+    // echo "Dihapus dengan data ->".$_GET['hapus'];
+}
+
+// Pelanggan::create(array("gender_id" => 1))
+ ?>
+
+
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">Data Pelanggan</h1>
@@ -5,175 +113,31 @@
     <!-- /.col-lg-12 -->
 </div>
 <!-- /.row -->
+ <?php 
+    // include 'config/koneksi.php';
+    $pelanggans = Pelanggan::all();
+    $genders = Gender::all();
+    $tipes = Tipe::all();
+    $no = 1;
+?>
 <div class="row">
     <div class="col-lg-8">
-        
-        <!-- /.panel -->
-        <div class="panel panel-default">
 
-            <div class="panel-body">
-                <div class="row">
-                    <!-- kolom setengah -->
-                    <div class="col-xs-12">
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hover table-striped">
-                                <thead>
-                                    <tr>
-                                         <th>No</th>
-                                         <th>Tipe</th>
-                                         <th>Nomor</th>
-                                         <th>Aksi</th>
-                                    </tr> 
-                                </thead> 
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>DN</td>
-                                        <td>32132131</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary btn-circle" rel="tooltip" data-original-title="Permintaan">
-                                                <i class="fa fa-list"></i>
-                                            </button>
-                                            <button type="button" class="btn btn-success btn-circle" rel="tooltip" data-original-title="Detail data">
-                                                <i class="fa fa-link"></i>
-                                            </button>
-                                            <button type="button" class="btn btn-info btn-circle" rel="tooltip" data-original-title="Edit data">
-                                                <i class="fa fa-check"></i>
-                                            </button>
-                                            <button type="button" class="btn btn-warning btn-circle" rel="tooltip" data-original-title="Hapus data" >
-                                                <i class="fa fa-times"></i> 
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>No Permintaan</td>
-                                        <td>32132131</td>
-                                        <td>                                        
-                                            <button type="button" class="btn btn-primary btn-circle" rel="tooltip" data-original-title="Permintaan">
-                                                <i class="fa fa-list"></i>
-                                            </button>
-                                            <button type="button" class="btn btn-success btn-circle" rel="tooltip" data-original-title="Detail data">
-                                                <i class="fa fa-link"></i>
-                                            </button>
-                                            <button type="button" class="btn btn-info btn-circle" rel="tooltip" data-original-title="Edit data">
-                                                <i class="fa fa-check"></i>
-                                            </button>
-                                            <button type="button" class="btn btn-warning btn-circle" rel="tooltip" data-original-title="Hapus data" >
-                                                <i class="fa fa-times"></i> 
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>      
-                            </table>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-             <!-- /.panel-body -->
-            
-            <div class="panel-footer">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahPelanggan">
-                    Tambah Pelanggan
-                </button>
-            </div>
-             <!-- modal #tambahPelanggan -->
-             <div class="modal fade" id="tambahPelanggan" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <h4 class="modal-title" id="myModalLabel">Tambah Pelanggan</h4>
-                        </div>
-                        <div class="modal-body">
-                            
-                            <!-- konten tambah pelanggan -->
+        <?php include 'view/content/flash.php'; ?>
+        <!-- detail data -->
+        <?php if (isset($_GET['id'])) {
+          $data = Pelanggan::find($_GET['id']);
+          include 'view/content/pelanggan/detail.php';
+        }elseif (isset($_GET['edit'])){
+          $data = Pelanggan::find($_GET['edit']);
+          include 'view/content/pelanggan/edit.php';
+        }elseif(isset($_GET['hapus'])){
+          $data = Pelanggan::find($_GET['hapus']);
+          include 'view/content/pelanggan/hapus.php';
+        }else{
+          include 'view/content/pelanggan/data.php';
+        } ?>
 
-                            <!-- gelar -->
-                            <div class="form-group">
-                                <label for="gelar">Gelar</label> 
-                                <input type="text" id="gelar"class="form-control" placeholder="nomor kontak"> 
-                            </div>
-
-                            <!-- nama pelanggan -->
-                            <div class="form-group">
-                                <label for="nama_pelanggan">Nama Pelanggan</label> 
-                                <input type="text" id="nama_pelanggan"class="form-control" placeholder="nomor kontak"> 
-                            </div>
-
-                            <!-- jenis kelamin -->
-                            <div class="form-group">
-                                <label for="jenis_kelamin">Jenis Kelamin</label> 
-                                <input type="text" id="jenis_kelamin"class="form-control" placeholder="nomor kontak"> 
-                            </div>
-
-
-                            <div class="form-group">
-                                <label for="contact_person">Contact Person</label> 
-                                <input type="number" id="contact_person"class="form-control" placeholder="nomor kontak"> 
-                            </div>
-                            <div class="form-group">
-                                <label for="tipe_identitas">Tipe Identitas</label> 
-                                <input type="text" id="tipe_identitas"class="form-control" placeholder="nomor kontak"> 
-                            </div>
-                            <div class="form-group">
-                                <label for="pengelola_layanan">Pengelola Layanan</label> 
-                                <input type="text" id="pengelola_layanan"class="form-control" placeholder="nomor kontak"> 
-                            </div>
-                            <div class="form-group">
-                                <label for="kategori_layanan">Kategori Layakan</label> 
-                                <input type="text" id="kategori_layanan"class="form-control" placeholder="nomor kontak"> 
-                            </div>
-                            <div class="form-group">
-                                <label for="alamat">Alamat</label> 
-                                <textarea class="form-control" name="alamat" id="alamat" cols="30" rows="3"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="kota">Kota</label> 
-                                <input type="text" id="kota"class="form-control" placeholder="nomor kontak"> 
-                            </div>
-                            <div class="form-group">
-                                <label for="kelurahan">Kelurahan</label> 
-                                <input type="text" id="Kelurahan"class="form-control" placeholder="nomor kontak"> 
-                            </div>
-                            <div class="form-group">
-                                <label for="jalan">Jalan</label> 
-                                <input type="text" id="jalan"class="form-control" placeholder="nomor kontak"> 
-                            </div>
-                            <div class="form-group">
-                                <label for="nomor">Nomor</label> 
-                                <input type="number" id="nomor"class="form-control" placeholder="nomor kontak"> 
-                            </div>
-                            <div class="form-group">
-                                <label for="nomor">RT/RW</label> 
-                                <input type="number" id="nomor"class="form-control" placeholder="nomor kontak"> 
-                            </div>
-                            <div class="form-group">
-                                <label for="alamat_tambahan">Alamat Tambahan</label> 
-                                <input type="number" id="alamat_tambahan"class="form-control" placeholder="nomor kontak"> 
-                            </div>
-                            <div class="form-group">
-                                <label for="komentar">Komentar</label> 
-                                <input type="number" id="komentar"class="form-control" placeholder="nomor kontak"> 
-                            </div>
-                            <div class="form-group">
-                                <label for="no_pelanggan">No Pelanggan</label> 
-                                <input type="number" id="no_pelanggan"class="form-control" placeholder="nomor kontak"> 
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Tambah </button>
-                        </div>
-                    </div>
-                    <!-- /.modal-content -->
-                </div>
-                <!-- /.modal-dialog -->
-            </div>
-        </div>
-       
-        </div>
     </div>
     
 </div>

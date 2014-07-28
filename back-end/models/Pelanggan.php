@@ -4,6 +4,11 @@ class Pelanggan extends Activerecord\Model{
 
   public static $table_name = 'pelanggan';
 
+  static $belongs_to = array(
+     array('gender'),
+     array('tipe')
+  ); 
+
   public function before_create(){
     $this->dibuat = Date('d-m-Y H:i:s', strtotime('now'));
   } 

@@ -34,17 +34,17 @@
     <script src="public/js/demo/dashboard-demo.js"></script>
 
 </head>
-
 <body>
-
+    <?php ob_start(); ?>
+    <?php include 'config/koneksi.php';?>
     <div id="wrapper">
 
         <!-- masukan header -->
-        <?php include 'view/header.php' ?>
+        <?php include 'view/head.php'; ?>
 
         <div id="page-wrapper">
             <!-- masukan konten -->
-            <?php include 'view/section.php' ?>
+            <?php include 'view/section.php';?>
             
         </div>
         <!-- /#page-wrapper -->
