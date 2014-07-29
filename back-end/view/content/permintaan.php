@@ -42,7 +42,7 @@
         }elseif (isset($_GET['edit'])){
           $data = Permintaan::find($_GET['edit']);
           include 'view/content/permintaan/edit.php';
-        }elseif (isset($_POST['detail'])){
+        }elseif (isset($_GET['detail'])){
           $data = Permintaan::find($_GET['detail']);
           include 'view/content/permintaan/detail.php';
         }else{

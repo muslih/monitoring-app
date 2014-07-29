@@ -34,7 +34,7 @@
                                     <?php echo $permintaan->dibuat->format('d M Y ')?>
                                 </td>
                                 <td>
-                                    <?php $data = statuspermintaan::find_by_id_permintaan($permintaan->id); ?>
+                                    <?php $data = statuspermintaan::find_by_permintaan_id($permintaan->id, array('order' => 'id desc')); ?>
                                     <?php status($data->status) ?>
                                     <!-- <?php echo $data->status; ?> -->
                                 </td>
@@ -42,9 +42,8 @@
                                     <button type="button" class="btn btn-primary btn-circle" rel="tooltip" data-original-title="Status">
                                         <i class="fa fa-list"></i>
                                     </button>
-                                    <button type="button" class="btn btn-success btn-circle" rel="tooltip" data-original-title="Detail data">
-                                        <i class="fa fa-link"></i>
-                                    </button>
+                                    <a href="?page=permintaan&detail=<?php echo $permintaan->id ?>"  class="btn btn-success btn-circle" rel="tooltip" data-original-title="Detail data"> <i class="fa fa-link"></i></a>
+                                    <a href="?page=permintaan&hapus=<?php echo $permintaan->id ?>"  class="btn btn-warning btn-circle" rel="tooltip" data-original-title="Hapus data"><i class="fa fa-times"></i></a>
                                 </td>
                             </tr>
                             <?php $no++ ?>
