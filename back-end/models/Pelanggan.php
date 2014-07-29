@@ -9,6 +9,11 @@ class Pelanggan extends Activerecord\Model{
      array('tipe')
   ); 
 
+    static $has_many = array(
+     array('permintaan')
+  ); 
+
+
   public function before_create(){
     $this->dibuat = Date('d-m-Y H:i:s', strtotime('now'));
   } 
