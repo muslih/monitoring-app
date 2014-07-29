@@ -14,12 +14,12 @@
 
 function status($stat){
   if($stat == 2 ){
-    return "<div class=\" alert-success btn-xs\">selesai</div>";
+    echo "<div class=\" alert-success btn-xs\">selesai</div>";
   }elseif($stat == 1 ) {
-   return  "<div class=\" alert-warning btn-xs\">proses</div>";
+   echo  "<div class=\" alert-warning btn-xs\">proses</div>";
   }elseif($stat == 0 ){
-    return "<div class=\" alert-danger btn-xs\">belum</div>";
+    echo "<div class=\" alert-danger btn-xs\">belum</div>";
   }else{
-    return "<div class=\" alert-info btn-xs\">undefined</div>";
+    echo "<div class=\" alert-info btn-xs\">undefined</div>";
   }
 }

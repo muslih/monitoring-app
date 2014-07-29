@@ -3,7 +3,7 @@
         <div class="row">
             <!-- kolom setengah -->
             <div class="col-xs-12">
-                <p>Anda yakin ingin menghapus data <?php echo $data->nama; ?> ?</p>
+                <p>Anda yakin ingin menambah  data <?php echo $data->nama; ?> ?</p>
             </div>
             
         </div>

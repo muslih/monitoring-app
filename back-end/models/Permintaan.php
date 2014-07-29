@@ -13,14 +13,15 @@ class Permintaan extends Activerecord\Model{
      array('produk'),
   ); 
 
- 
-
-
   public function before_create(){
-    $this->date_added = Date('d-m-Y H:i:s', strtotime('now'));
+    $this->dibuat = Date('d-m-Y H:i:s', strtotime('now'));
   } 
 
-  public function before_update(){
-    $this->date_modified = Date('d-m-Y H:i:s', strtotime('now'));
-  } 
+  // public function after_create(){
+  //   Statuspermintaan::create(array(
+  //     "id_permintaan" => $this->id
+  //   ))
+  // } 
+       
+
 }
