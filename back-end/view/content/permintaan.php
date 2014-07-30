@@ -7,14 +7,26 @@
       ))){
         $dat = Permintaan::last();
         Statuspermintaan::create(array(
-            "id_permintaan" => $dat->id,
+            "permintaan_id" => $dat->id,
             "status" => 0
         ));
         header('location:index.php?page=permintaan&pesansukses=true');
     }else{
         header('location:index.php??page=permintaan&pesansukses=false');
     }
-} ?>
+}elseif (isset($_POST['hapus']) && $_POST['hapus'] == 'Hapus') {
+     $data = Permintaan::find($_GET['hapus']);
+     // $datab = Permintaan::find_by_permintaan_id($_GET['hapus']);
+
+    if($data->delete()){
+        header('location:index.php?page=permintaan&pesansukses=true&pesan=data%20berhasil%20di%20hapus');
+    }else{
+        header('location:index.php??page=permintaan&pesansukses=false&pesan=data%20gagal%20di%20hapus');
+    }
+    
+    // echo "Dihapus dengan data ->".$_GET['hapus'];
+}
+ ?>
 
 <div class="row">
     <div class="col-lg-12">
@@ -30,6 +42,8 @@
             // include 'config/koneksi.php';
             $tipes = Tipe::all();
             $produks = Produk::all();
+            $statuspermintaan = Statuspermintaan::all();
+
             $no = 1;
         ?>
 
@@ -45,6 +59,9 @@
         }elseif (isset($_GET['detail'])){
           $data = Permintaan::find($_GET['detail']);
           include 'view/content/permintaan/detail.php';
+        }elseif(isset($_GET['hapus'])){
+          $data = Permintaan::find($_GET['hapus']);
+           include 'view/content/permintaan/hapus.php';
         }else{
           include 'view/content/permintaan/data.php';
         } ?>

@@ -5,16 +5,13 @@
                 <a href="#"><i class="fa fa-sitemap fa-fw"></i> Data Master<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="?page=produk">Master Produk</a>
+                        <a href="?page=master&master=produk">Master Produk</a>
                     </li>
                     <li>
-                        <a href="#">Master Pengelola Layanan</a>
+                        <a href="?page=master&master=tipe">Master Tipe</a>
                     </li>
                     <li>
-                        <a href="#">Master Permintaan</a>
-                    </li>
-                    <li>
-                        <a href="#">Master User</a>
+                        <a href="?page=master&master=user">Master User</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

@@ -1,4 +1,14 @@
-
+<?php if (isset($_POST['update']) && $_POST['update'] == 'update') {
+    
+    if (Statuspermintaan::create(array(
+        "permintaan_id" => $_GET['detail'],
+        "status" => $_POST['statuspermintaan']
+    ))){
+        header('location:index.php?page=permintaan&detail='.$_GET['detail'].'&pesansukses=true');
+    }else{
+        header('location:index.php??page=permintaan&detail='.$_GET['detail'].'&pesansukses=false');
+    }
+} ?>
 <div class="panel panel-default">
 
     <div class="panel-heading">
@@ -78,11 +88,17 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php $nil = 0 ?>
                             <?php foreach (array_reverse($statuses) as $stat) { ?>
                             <tr>
                                 <td><?php status($stat->status) ?></td>
                                 <td><?php echo $stat->dibuat->format('d M Y ') ?></td>
+                                <?php $nil = $stat->status ?>
                             </tr>
+                            <?php } ?>
+
+                            <?php foreach ($statuses as $stat) { ?>
+                                <?php $nil = $stat->status ?>
                             <?php } ?>
                            
                         </tbody>      
@@ -96,5 +112,46 @@
     
     <div class="panel-footer">
       <a href="?page=permintaan" class="btn btn-primary"> Kembali </a>
+      <?php if ($nil != 2){ ?>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahStatus">
+        Tambah Status
+      </button>
+      <?php } ?>
+    </div>
+
+    <div class="modal fade" id="tambahStatus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel">Tambah Status</h4>
+                </div>
+                <form action="index.php?page=permintaan&detail=<?php echo $data->id ?>" method="post">
+                <div class="modal-body">
+                    
+                    <!-- konten cari/tambah permintaan -->
+                    <?php  ?>
+                    
+                    
+                    <div class="form-group">
+                        <label for="gelar">Update status</label> 
+                        <select name="statuspermintaan" id="statuspermintaan" class="form-control">
+                            <option value="0"><?php status(0)?></option>
+                            <option value="1"><?php status(1)?></option>
+                            <option value="2"><?php status(2)?></option>
+                        </select>
+                    </div>
+                   
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <input type="submit" class="btn btn-primary" name="update" value="update">
+                </div>
+                </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
     </div>
 </div>
