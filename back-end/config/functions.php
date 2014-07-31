@@ -26,9 +26,9 @@ function status($stat){
 
 function level($lev){
   if ($lev == 0) {
-    echo "Operator"
+    echo "Operator";
   }elseif ($lev == 1) {
-    echo "Teknisi"
+    echo "Teknisi";
   }elseif ($lev == 2) {
     echo "Manager" ;
   }else{
