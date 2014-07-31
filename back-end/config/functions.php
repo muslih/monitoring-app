@@ -37,12 +37,10 @@ function level($lev){
 }
 
 function tipelog($tipe){
-  if ($lev == 0) {
-    echo "Operator";
-  }elseif ($lev == 1) {
-    echo "Teknisi";
-  }elseif ($lev == 2) {
-    echo "Manager" ;
+  if ($tipe == 0) {
+    echo "masuk";
+  }elseif ($tipe == 1) {
+    echo "keluar";
   }else{
     echo "Tidak didefinisikan";
   }
