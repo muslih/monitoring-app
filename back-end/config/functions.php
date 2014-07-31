@@ -23,3 +23,15 @@ function status($stat){
     echo "<div class=\" alert-info btn-xs\">undefined</div>";
   }
 }
+
+function level($lev){
+  if ($lev == 0) {
+    echo "Operator"
+  }elseif ($lev == 1) {
+    echo "Teknisi"
+  }elseif ($lev == 2) {
+    echo "Manager" ;
+  }else{
+    echo "Tidak didefinisikan";
+  }
+}
