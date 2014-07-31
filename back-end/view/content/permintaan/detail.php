@@ -19,7 +19,7 @@
     <div class="panel-body">
         <div class="row">
             <!-- kolom setengah -->
-            <div class="col-xs-7">
+            <div class="col-xs-6">
                 <div class="table-responsive">
                     <table class="table">
                         <tbody>
@@ -76,7 +76,7 @@
                 </div>
             </div>
 
-            <div class="col-xs-5">
+            <div class="col-xs-6">
                 <div class="table-responsive">
 
                     <?php $statuses = $data->statuspermintaan ?>
@@ -84,6 +84,7 @@
                         <thead>
                             <tr>
                                 <th>status</th>
+                                <th>user</th>
                                 <th>waktu</th>
                             </tr>
                         </thead>
@@ -92,6 +93,7 @@
                             <?php foreach (array_reverse($statuses) as $stat) { ?>
                             <tr>
                                 <td><?php status($stat->status) ?></td>
+                                <td><?php echo $stat->user->user; ?></td>
                                 <td><?php echo $stat->dibuat->format('d M Y ') ?></td>
                                 <?php $nil = $stat->status ?>
                             </tr>
