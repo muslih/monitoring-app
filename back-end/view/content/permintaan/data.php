@@ -1,5 +1,10 @@
 <!-- /.panel -->
 <div class="panel panel-default">
+    <div class="panel-heading">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahPelanggan">
+            Tambah Permintaan
+        </button>
+    </div>
     <div class="panel-body">
         <div class="row">
             <!-- kolom setengah -->
@@ -39,9 +44,9 @@
                                     <!-- <?php echo $data->status; ?> -->
                                 </td>
                                 <td>
-                                    <button type="button" class="btn btn-primary btn-circle" rel="tooltip" data-original-title="Status">
+                                   <!--  <button type="button" class="btn btn-primary btn-circle" rel="tooltip" data-original-title="Status">
                                         <i class="fa fa-list"></i>
-                                    </button>
+                                    </button> -->
                                     <a href="?page=permintaan&detail=<?php echo $permintaan->id ?>"  class="btn btn-success btn-circle" rel="tooltip" data-original-title="Detail data"> <i class="fa fa-link"></i></a>
                                     <a href="?page=permintaan&hapus=<?php echo $permintaan->id ?>"  class="btn btn-warning btn-circle" rel="tooltip" data-original-title="Hapus data"><i class="fa fa-times"></i></a>
                                 </td>

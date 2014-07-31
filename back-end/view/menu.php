@@ -1,5 +1,5 @@
-<div class="navbar-default navbar-static-side" role="navigation">
-    <div class="sidebar-collapse">
+<div class="navbar-default sidebar" role="navigation">
+    <div class="sidebar-nav navbar-collapse">
         <ul class="nav" id="side-menu">
             <li>
                 <a href="#"><i class="fa fa-sitemap fa-fw"></i> Data Master<span class="fa arrow"></span></a>
@@ -54,3 +54,4 @@
     </div>
     <!-- /.sidebar-collapse -->
 </div>
+

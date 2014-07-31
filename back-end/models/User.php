@@ -6,7 +6,6 @@ class User extends Activerecord\Model{
   static $has_many = array(
      array('pelanggan'),
      array('statuspermintaan')
-
   );  
 
   public function before_create(){

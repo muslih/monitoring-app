@@ -1,3 +1,5 @@
+<br>
+<br>
 <?php 
 	if (isset($_GET["page"])) {
 		// buat variable untuk method get

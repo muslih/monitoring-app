@@ -121,7 +121,7 @@ if (isset($_POST['simpan']) && $_POST['simpan'] == 'Tambah') {
     $no = 1;
 ?>
 <div class="row">
-    <div class="col-lg-8">
+    <div class="col-lg-12">
 
         <?php include 'view/content/flash.php'; ?>
         <!-- detail data -->

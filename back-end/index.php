@@ -45,7 +45,7 @@
         <!-- masukan header -->
         <?php include 'view/head.php'; ?>
 
-        <div id="page-wrapper">
+        <div id="page-wrapper" style="min-height: 220px;">
             <!-- masukan konten -->
             <?php include 'view/section.php';?>
             
