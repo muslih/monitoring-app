@@ -3,7 +3,7 @@
   if ($_SESSION['nama'] != "") {
     Userlog::create(array(
       "user_id" => $_SESSION['id'],
-      "tipe_log" => "log out"
+      "tipe_log" => 1
     ));
     unset($_SESSION['nama']);
     unset($_SESSION['username']);

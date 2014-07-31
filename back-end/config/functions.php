@@ -35,3 +35,16 @@ function level($lev){
     echo "Tidak didefinisikan";
   }
 }
+
+function tipelog($tipe){
+  if ($lev == 0) {
+    echo "Operator";
+  }elseif ($lev == 1) {
+    echo "Teknisi";
+  }elseif ($lev == 2) {
+    echo "Manager" ;
+  }else{
+    echo "Tidak didefinisikan";
+  }
+}
+

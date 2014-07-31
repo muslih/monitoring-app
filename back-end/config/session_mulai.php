@@ -9,7 +9,7 @@
 
       Userlog::create(array(
         "user_id" => $_SESSION['id'],
-        "tipe_log" => "log in"
+        "tipe_log" => 0
       ));
 
       header('location:?pesansukses=true&pesan=anda%20berhasil%20login');
