@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+<?php session_start(); ?>
 <head>
 
     <meta charset="utf-8">
@@ -35,10 +35,13 @@
 
 </head>
 <body>
+
     <?php ob_start(); ?>
     <?php include 'config/koneksi.php';?>
     <div id="wrapper">
-
+        <?php  if (empty($_SESSION['nama'])){
+            include 'view/login.php';
+        }else{ ?>
         <!-- masukan header -->
         <?php include 'view/head.php'; ?>
 
@@ -48,6 +51,7 @@
             
         </div>
         <!-- /#page-wrapper -->
+        <?php } ?>
 
     </div>
     <!-- /#wrapper -->

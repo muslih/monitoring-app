@@ -14,7 +14,7 @@
         
         <!-- /.dropdown -->
         <li>
-            Selamat datang <strong>User</strong>
+            Selamat datang <strong><?php echo $_SESSION['nama'] ?></strong>
         </li>
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -26,7 +26,7 @@
                 <li><a href="#"><i class="fa fa-gear fa-fw"></i> Pengaturan</a>
                 </li>
                 <li class="divider"></li>
-                <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Keluar</a>
+                <li><a href="index.php?page=logout"><i class="fa fa-sign-out fa-fw"></i> Keluar</a>
                 </li>
             </ul>
             <!-- /.dropdown-user -->

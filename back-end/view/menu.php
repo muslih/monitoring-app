@@ -26,13 +26,13 @@
                 <a href="#"><i class="fa fa-files-o fa-fw"></i> Akun<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">Profil</a>
+                        <a href="?page=akun&akun=profil">Profil</a>
                     </li>
                     <li>
-                        <a href="#">Pengaturan</a>
+                        <a href="?page=akun&akun=edit">Pengaturan</a>
                     </li>
                     <li>
-                        <a href="#">Keluar</a>
+                        <a href="?page=logout">Keluar</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

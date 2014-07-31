@@ -7,4 +7,8 @@ class User extends Activerecord\Model{
     $this->dibuat = Date('d-m-Y H:i:s', strtotime('now'));
   } 
 
+  public function before_update(){
+    $this->diupdate = Date('d-m-Y H:i:s', strtotime('now'));
+  } 
+
 }
