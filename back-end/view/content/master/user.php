@@ -66,7 +66,7 @@
       </div>
   </div>
   <div class="panel-footer">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahuser">
+    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambahuser">
         Tambah user
     </button>
   </div>

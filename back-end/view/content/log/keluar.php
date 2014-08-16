@@ -20,7 +20,15 @@
                   </tr> 
               </thead> 
               <tbody>
-                  <?php $logs = Userlog::all(array('conditions' => array('tipe_log = ?', '1')))?>
+                  <?php  
+                    if ($_SESSION['level'] == "2") {
+                      $logs = Userlog::all(array('conditions' => array('tipe_log = ?', '1')));
+                    }else{ 
+                      // $id = ;
+                      $logs = Userlog::all(array('conditions' => array('tipe_log = ? AND user_id = ?', '1',$_SESSION['id']))) ;
+                    } 
+                  ?>
+                  
                   <?php $no = 1 ?>
                   <?php foreach ($logs as $log) { ?>
                   <tr>
@@ -42,37 +50,6 @@
       </div>
   </div>
   <div class="panel-footer">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahlog">
-        Tambah log
-    </button>
   </div>
   <!-- /.panel-body -->
 </div>
-
-<div class="modal fade" id="tambahlog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title" id="myModalLabel">Tambah log</h4>
-                </div>
-                <form action="index.php?page=master&master=log" method="post">
-                <div class="modal-body">
-                    
-                    <!-- konten cari/tambah permintaan -->
-                    <div class="form-group">
-                        <label for="log">Masukan nama log baru</label> 
-                        <input type="text" id="log" name="log" class="form-control" placeholder="log kontak"> 
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <input type="submit" class="btn btn-primary" name="tambah" value="Tambah">
-                </div>
-                </form>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>

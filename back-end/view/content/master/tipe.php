@@ -62,7 +62,7 @@
       </div>
   </div>
   <div class="panel-footer">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahProduk">
+    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambahProduk">
         Tambah Produk
     </button>
   </div>

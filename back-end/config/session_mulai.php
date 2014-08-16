@@ -6,6 +6,7 @@
       $_SESSION['nama'] = $login->nama;
       $_SESSION['username'] = $login->user;
       $_SESSION['id'] = $login->id;
+      $_SESSION['level'] = $login->level;
 
       Userlog::create(array(
         "user_id" => $_SESSION['id'],
@@ -14,7 +15,7 @@
 
       header('location:?pesansukses=true&pesan=anda%20berhasil%20login');
     }else{
-      header('location:?pesansukses=falsse&pesan=anda%20gagal%20login,%20authentikasi%20gagal');
+      header('location:?pesansukses=false&pesan=anda%20gagal%20login,%20authentikasi%20gagal');
     }
 
   }else{

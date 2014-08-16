@@ -1,6 +1,7 @@
 <div class="navbar-default sidebar" role="navigation">
     <div class="sidebar-nav navbar-collapse">
         <ul class="nav" id="side-menu">
+            <?php  if ($_SESSION['level'] == "2") { ?> 
             <li>
                 <a href="#"><i class="fa fa-sitemap fa-fw"></i> Data Master<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
@@ -16,6 +17,7 @@
                 </ul>
                 <!-- /.nav-second-level -->
             </li>
+            <?php } ?>
             <li>
                 <a href="?page=pelanggan"><i class="fa fa-group fa-fw"></i> Pelanggan</span></a>
             </li>
