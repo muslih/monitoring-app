@@ -11,7 +11,8 @@ if (isset($_POST['simpan']) && $_POST['simpan'] == 'Tambah') {
     $kelurahan = $_POST['kelurahan'];
     $kontak = $_POST['kontak'];
     $alamat_tambahan = $_POST['alamat_tambahan'];
-    $no_pelanggan = $_POST['no_pelanggan'];
+    // nomor acak
+    $no_pelanggan = substr(number_format(time() * mt_rand(),0,'',''),0,7);
 
     // echo "dipost ment";
 
@@ -46,7 +47,7 @@ if (isset($_POST['simpan']) && $_POST['simpan'] == 'Tambah') {
     $kelurahan = $_POST['kelurahan'];
     $kontak = $_POST['kontak'];
     $alamat_tambahan = $_POST['alamat_tambahan'];
-    $no_pelanggan = $_POST['no_pelanggan'];
+    // $no_pelanggan = $_POST['no_pelanggan'];
 
     // echo "dipost ment";
 

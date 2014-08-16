@@ -132,11 +132,6 @@
                         <textarea class="form-control" name="alamat_tambahan" id="alamat_tambahan" name="alamat_tambahan" cols="30" rows="3"></textarea>
                     </div>
                     
-                    <!-- no pelanggan -->
-                    <div class="form-group">
-                        <label for="no_pelanggan">No Pelanggan</label> 
-                        <input type="text" id="no_pelanggan" name="no_pelanggan" class="form-control" placeholder="nomor pelanggan" required> 
-                    </div>
 
                 </div>
                 <div class="modal-footer">

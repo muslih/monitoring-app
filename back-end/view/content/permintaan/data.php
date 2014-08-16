@@ -81,8 +81,8 @@
                     
                     <!-- konten cari/tambah permintaan -->
                     <div class="form-group">
-                        <label for="nomor">Nomor Kontak</label> 
-                        <input type="text" id="nomor" name="nomor" class="form-control" placeholder="nomor kontak"> 
+                        <label for="nomor">No Pelanggan</label> 
+                        <input type="text" id="nomor" name="nomor" class="form-control" placeholder="no pelanggan"> 
                     </div>
 
                 </div>
