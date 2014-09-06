@@ -15,11 +15,11 @@
                       // $jadwal = Login::find_by_user('admin');
                       ?>
                     <?php include 'view/content/flash.php' ?>
-                    <form role="form" action="index.php" method="post">
+                    <form role="form" action="" method="get">
                         <fieldset>
                             <div class="form-group">
                                 <label for="nomor" class="label-control">Masukan Nomor telp  <span>0511 - </span></label>
-                                <input class="form-control" placeholder="nomor" name="nomor telp" type="text" autofocus>
+                                <input class="form-control" placeholder="nomor" name="nomor" type="text" autofocus>
                             </div>
                             <div class="form-group">
                                 Anda pegawai? <a href="?page=login">masuk</a>
@@ -29,6 +29,29 @@
                     </form>
                 </div>
             </div>
+            <?php if (isset($_GET['lacak']) && $_GET['lacak'] == 'lacak'){ 
+
+                $data = Pelanggan::find('all',array('conditions' => array('no_pelanggan = ?', $_GET['nomor'] )));
+                //       Book::find('all', array('conditions' => array('genre = ?', 'Romance')));
+                
+            ?>
+
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">Hasil pencarians <strong>0511 - <?php echo $_GET['nomor'] ?> </strong></div>
+                <div class="panel-body">
+                <?php 
+                    if ($data) {
+                        echo "Data ditemukan";
+                    }else{
+                        echo "Data tidak ditemukan";
+                    }
+                ?>
+                    
+
+                </div>
+            </div>
+            <?php } ?>
         </div>
+
     </div>
     </div>
