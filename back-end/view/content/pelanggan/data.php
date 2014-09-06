@@ -17,6 +17,7 @@
                                  <th>No</th>
                                  <th>Tipe</th>
                                  <th>Nomor</th>
+                                 <th>Nama</th>
                                  <th>Aksi</th>
                             </tr> 
                         </thead> 
@@ -25,7 +26,8 @@
                             <tr>
                                 <td><?php echo $no ?></td>
                                 <td><?php echo  $pelanggan->tipe->detail_tipe ?></td>
-                                <td><?php echo $pelanggan->no_pelanggan ?></td>
+                                <td><?php echo  $pelanggan->nama ?></td>
+                                <td>0511 - <?php echo $pelanggan->no_pelanggan ?></td>
                                 <td>
                                     <a href="?page=pelanggan&id=<?php echo $pelanggan->id ?>" class="btn btn-primary btn-circle" rel="tooltip" data-original-title="Permintaan"><i class="fa fa-list"></i></a>
                                     <a href="?page=pelanggan&edit=<?php echo $pelanggan->id ?>" class="btn btn-success btn-circle" rel="tooltip" data-original-title="Detail data"><i class="fa fa-link"></i></a>

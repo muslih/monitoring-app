@@ -23,6 +23,10 @@
                 <div class="table-responsive">
                     <table class="table">
                         <tbody>
+                          <tr>
+                             <td>Produk</td>
+                             <td><?php echo $data->produk->nama_produk ?></td>
+                           </tr>
                            <tr>
                              <td>Tipe ID</td>
                              <td><?php echo $data->pelanggan->tipe->detail_tipe ?></td>

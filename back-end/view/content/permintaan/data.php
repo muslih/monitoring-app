@@ -14,7 +14,7 @@
                         <thead>
                             <tr>
                                  <th>No</th>
-                                 <th>Tipe</th>
+                                 <th>Produk</th>
                                  <th>Nomor</th>
                                  <th>Waktu</th>
                                  <th>Status </th>
@@ -30,7 +30,7 @@
                                 <td><?php echo $no ?></td>
                                 
                                 <td>
-                                    <?php echo $permintaan->pelanggan->tipe->detail_tipe ?>
+                                    <?php echo $permintaan->produk->nama_produk ?>
                                 </td>
                                 <td>
                                     <?php echo $permintaan->pelanggan->no_pelanggan ?>
