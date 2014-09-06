@@ -40,7 +40,11 @@
     <?php include 'config/koneksi.php';?>
     <div id="wrapper">
         <?php  if (empty($_SESSION['nama'])){
-            include 'view/login.php';
+            if (isset($_GET['page']) && $_GET['page'] == 'login') {
+               include 'view/login.php';
+            }else{
+                include 'view/track.php';
+            }
         }else{ ?>
         <!-- masukan header -->
         <?php include 'view/head.php'; ?>

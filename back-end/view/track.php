@@ -3,7 +3,7 @@
         <div class="col-md-4 col-md-offset-4">
             <div class="login-panel panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Aplikasi Monitoring</h3>
+                    <h3 class="panel-title">Lacak permintaan</h3>
                 </div>
                 <div class="panel-body">
                     <?php 
@@ -18,20 +18,13 @@
                     <form role="form" action="index.php" method="post">
                         <fieldset>
                             <div class="form-group">
-                                <input class="form-control" placeholder="user" name="user" type="text" autofocus>
+                                <label for="nomor" class="label-control">Masukan Nomor telp  <span>0511 - </span></label>
+                                <input class="form-control" placeholder="nomor" name="nomor telp" type="text" autofocus>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="password" name="password" type="password" value="">
+                                Anda pegawai? <a href="?page=login">masuk</a>
                             </div>
-                            <!-- <div class="checkbox">
-                                <label>
-                                    <input name="remember" type="checkbox" value="Remember Me">Remember Me
-                                </label>
-                            </div> -->
-                            <!-- Change this to a button or input when using this as a form -->
-                            <input type="submit" class="btn btn-sm btn-success btn-block" name="masuk" value="masuk">
-                            <br>   
-                            <a href="?page=track">Kembali</a>
+                            <input type="submit" class="btn btn-sm btn-success btn-block" name="lacak" value="lacak">
                         </fieldset>
                     </form>
                 </div>
