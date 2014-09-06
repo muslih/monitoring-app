@@ -40,8 +40,44 @@
                 <div class="panel-heading">Hasil pencarians <strong>0511 - <?php echo $_GET['nomor'] ?> </strong></div>
                 <div class="panel-body">
                 <?php 
-                    if ($data) {
-                        echo "Data ditemukan";
+                    // kalo data berdasarkan nomor telp ditemukan
+                    if ($data) { 
+                ?>
+
+                <?php foreach ($data as $dat) { ?>
+                
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                           <tr>
+                             <td>No Telp</td>
+                             <td><?php echo $dat->no_pelanggan ?></td>
+                           </tr>
+
+                           <tr>
+                             <td>Nama</td>
+                             <td><?php echo $dat->nama ?></td>
+                           </tr>
+                           <tr>
+                             <td>Alamat</td>
+                             <td><?php echo $dat->alamat ?></td>
+                           </tr>
+                           <tr>
+                               <td>Permintaan</td>
+                               <td>
+                                   <?php 
+                                   foreach ($dat->permintaan as $permintaan){
+                                        echo $permintaan->produk->nama_produk.'<br>';
+                                   }
+                                    ?>
+                               </td>
+                           </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <?php } ?>
+                <?php   
+                    // kalo data berdasarkan nomor telpon tidak ditemukan
                     }else{
                         echo "Data tidak ditemukan";
                     }

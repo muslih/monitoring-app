@@ -33,7 +33,7 @@
                                     <?php echo $permintaan->produk->nama_produk ?>
                                 </td>
                                 <td>
-                                    <?php echo $permintaan->pelanggan->no_pelanggan ?>
+                                    0511 - <?php echo $permintaan->pelanggan->no_pelanggan ?>
                                 </td>
                                 <td>
                                     <?php echo $permintaan->dibuat->format('d M Y ')?>
