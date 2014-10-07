@@ -15,9 +15,9 @@
                         <thead>
                             <tr>
                                  <th>No</th>
-                                 <th>Tipe</th>
-                                 <th>Nomor</th>
                                  <th>Nama</th>
+                                 <th>Nomor</th>
+                                 <th>Alamat</th>
                                  <th>Aksi</th>
                             </tr> 
                         </thead> 
@@ -25,9 +25,10 @@
                             <?php foreach ($pelanggans as $pelanggan) { ?>
                             <tr>
                                 <td><?php echo $no ?></td>
-                                <td><?php echo  $pelanggan->tipe->detail_tipe ?></td>
+                                
                                 <td><?php echo  $pelanggan->nama ?></td>
                                 <td>0511 - <?php echo $pelanggan->no_pelanggan ?></td>
+                                <td><?php echo  $pelanggan->alamat ?></td>
                                 <td>
                                     <a href="?page=pelanggan&id=<?php echo $pelanggan->id ?>" class="btn btn-primary btn-circle" rel="tooltip" data-original-title="Permintaan"><i class="fa fa-list"></i></a>
                                     <a href="?page=pelanggan&edit=<?php echo $pelanggan->id ?>" class="btn btn-success btn-circle" rel="tooltip" data-original-title="Detail data"><i class="fa fa-link"></i></a>
@@ -71,16 +72,7 @@
                         <input type="text" id="gelar" name = "gelar" class="form-control" placeholder="gelar" required> 
                     </div>
 
-                    <!-- tipe id -->
-                    <div class="form-group">
-                        <label for="tipe">Tipe</label> 
-                        <select name="tipe_id" id="tipe" class="form-control" required>
-                             <?php foreach ($tipes as $tipe) { ?>
-                             <option value="<?php echo $tipe->id ?> "><?php echo $tipe->detail_tipe; ?></option>                                
-                             <?php } ?>
-                        </select>
-                    </div>
-
+                    
                     <!-- nama pelanggan -->
                     <div class="form-group">
                         <label for="nama_pelanggan">Nama Pelanggan</label> 

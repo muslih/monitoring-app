@@ -4,6 +4,14 @@
             <div class="login-panel panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Lacak permintaan</h3>
+                    <?php 
+                    $produks = Produk::all();
+                    if($produks){
+                        echo "Bisa konek ke dalam database";
+                    }else{
+                        echo "G bisa konek ke database";
+                    }
+                     ?>
                 </div>
                 <div class="panel-body">
                     <?php 
@@ -63,13 +71,30 @@
                              <td><?php echo $dat->alamat ?></td>
                            </tr>
                            <tr>
-                               <td>Permintaan</td>
-                               <td>
-                                   <?php 
-                                   foreach ($dat->permintaan as $permintaan){
-                                        echo $permintaan->produk->nama_produk.'<br>';
+                               <td colspan="2">Permintaan</td>
+                               
+                           </tr>
+                           <tr>
+                            <?php include 'config/functions.php'; ?>
+                             <td colspan="2">
+                                    <ol style="padding-left:1em">
+                                    
+                                    <?php 
+                                   foreach (array_reverse($dat->permintaan) as $permintaan){
+                                        echo "<li>".$permintaan->produk->nama_produk.'<br>';
+                                        echo "<ul style='padding-left:1em'>";
+                                        foreach (array_reverse($permintaan->statuspermintaan) as $status) { 
+                                          echo "<li>Diupdate pada <strong>".$status->dibuat->format('d M Y ')."</strong>";
+                                          echo status($status->status);
+                                          echo "<p>".$status->pesan."</p>";
+                                          echo "<br/></li>";
+                                        }
+                                        echo "</ul>";
+                                        echo "</li>";
                                    }
                                     ?>
+                                    </ol>
+                                   
                                </td>
                            </tr>
                         </tbody>

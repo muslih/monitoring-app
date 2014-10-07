@@ -15,9 +15,10 @@
                             <tr>
                                  <th>No</th>
                                  <th>Produk</th>
-                                 <th>Nomor</th>
+                                 <th>Telp</th>
                                  <th>Waktu</th>
                                  <th>Status </th>
+                                 <th>Pesan</th>
                                  <th>Aksi</th>
                             </tr> 
                         </thead> 
@@ -43,6 +44,7 @@
                                     <?php status($data->status) ?>
                                     <!-- <?php echo $data->status; ?> -->
                                 </td>
+                                <td><?php echo $data->pesan; ?></td>
                                 <td>
                                    <!--  <button type="button" class="btn btn-primary btn-circle" rel="tooltip" data-original-title="Status">
                                         <i class="fa fa-list"></i>

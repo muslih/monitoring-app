@@ -2,7 +2,8 @@
     
     if (Statuspermintaan::create(array(
         "permintaan_id" => $_GET['detail'],
-        "status" => $_POST['statuspermintaan']
+        "status" => $_POST['statuspermintaan'],
+        "pesan" => $_POST['pesan']
     ))){
         header('location:index.php?page=permintaan&detail='.$_GET['detail'].'&pesansukses=true');
     }else{
@@ -87,8 +88,9 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>status</th>
-                                <th>user</th>
+                                <th>Status</th>
+                                <th>User</th>
+                                <th>Pesan</th>
                                 <th>waktu</th>
                             </tr>
                         </thead>
@@ -98,6 +100,7 @@
                             <tr>
                                 <td><?php status($stat->status) ?></td>
                                 <td><?php echo $stat->user->user; ?></td>
+                                <td><?php echo $stat->pesan; ?></td>
                                 <td><?php echo $stat->dibuat->format('d M Y ') ?></td>
                                 <?php $nil = $stat->status ?>
                             </tr>
@@ -146,6 +149,10 @@
                             <option value="1"><?php status(1)?></option>
                             <option value="2"><?php status(2)?></option>
                         </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="pesan">Pesan</label> 
+                      <input type="text" name="pesan" id="pesan" class="form-control" placeholder="pesan kepada user" >
                     </div>
                    
 

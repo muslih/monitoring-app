@@ -15,6 +15,8 @@
                       // $jadwal = Login::find_by_user('admin');
                       ?>
                     <?php include 'view/content/flash.php' ?>
+                    
+                    
                     <form role="form" action="index.php" method="post">
                         <fieldset>
                             <div class="form-group">
@@ -34,6 +36,7 @@
                             <a href="?page=track">Kembali</a>
                         </fieldset>
                     </form>
+                    
                 </div>
             </div>
         </div>

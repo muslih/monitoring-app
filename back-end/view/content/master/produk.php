@@ -1,6 +1,9 @@
 <?php if(isset($_POST['tambah']) && $_POST['tambah'] == 'Tambah'){
   if (Produk::create(array(
-        "nama_produk" => $_POST['produk']
+        "nama_produk" => $_POST['produk'],
+        "kecepatan" => $_POST['kecepatan'],
+        "kuota" => $_POST['kuota'],
+        "harga" => $_POST['harga']
       ))){
         header('location:index.php?page=master&master=produk&pesansukses=true');
     }else{
@@ -33,7 +36,10 @@
               <thead>
                   <tr>
                        <th>No</th>
-                       <th>Nama Produk</th>
+                       <th>Produk</th>
+                       <th>Kecepatan</th>
+                       <th>Kuota</th>
+                       <th>Harga</th>
                        <th>Aksi</th>
                   </tr> 
               </thead> 
@@ -44,6 +50,9 @@
                   <tr>
                       <td><?php echo $no ?></td>
                       <td><?php echo $produk->nama_produk ?></td>
+                      <td><?php echo $produk->kecepatan ?> kbps</td>
+                      <td><?php echo $produk->kuota ?></td>
+                      <td>Rp. <?php echo $produk->harga ?></td>
                       <td>
 
                           <a href="?page=master&master=produk&hapus=<?php echo $produk->id ?>"  class="btn btn-warning btn-circle" rel="tooltip" data-original-title="Hapus data"><i class="fa fa-times"></i></a>
@@ -78,9 +87,23 @@
                     
                     <!-- konten cari/tambah permintaan -->
                     <div class="form-group">
-                        <label for="produk">Masukan nama produk baru</label> 
-                        <input type="text" id="produk" name="produk" class="form-control" placeholder="produk kontak"> 
+                        <label for="produk">Nama Produk</label> 
+                        <input
+                         type="text" id="produk" name="produk" class="form-control" placeholder="produk kontak"> 
                     </div>
+                    <div class="form-group">
+                        <label for="kecepatan">Kecepatan</label> 
+                        <input type="text" id="kecepatan" name="kecepatan" class="form-control" placeholder="kecepatan dalam kbps"> 
+                    </div>
+                    <div class="form-group">
+                        <label for="kuota">Kuota</label> 
+                        <input type="text" id="kuota" name="kuota" class="form-control" placeholder="kuota"> 
+                    </div>
+                    <div class="form-group">
+                        <label for="harga">Harga</label> 
+                        <input type="text" id="harga" name="harga" class="form-control" placeholder="harga"> 
+                    </div>
+
 
                 </div>
                 <div class="modal-footer">

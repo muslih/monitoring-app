@@ -71,7 +71,7 @@
                 <p>Bila anda ingin menambahkan silahkan pilih tipe produk dibawah ini</p>
                 <select name="produk" id="produk">
                 <?php foreach ($produks as $produk) { ?>
-                  <option value="<?php echo $produk->id ?>"><?php echo $produk->nama_produk ?></option>
+                  <option value="<?php echo $produk->id ?>"><?php echo $produk->nama_produk ?>/<?php echo $produk->kecepatan; ?>kbps/<?php echo $produk->kuota ?>/<?php echo $produk->harga ?></option>
                 <?php } ?>
                 </select>
             </div>

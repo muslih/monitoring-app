@@ -13,10 +13,7 @@
                 <div class="table-responsive">
                     <table class="table">
                         <tbody>
-                           <tr>
-                             <td>Tipe ID</td>
-                             <td><?php echo $data->tipe->detail_tipe ?></td>
-                           </tr>
+                           
                            <tr>
                              <td>No Pelanggan</td>
                              <td><?php echo $data->no_pelanggan ?></td>
