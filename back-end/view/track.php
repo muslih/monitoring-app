@@ -71,7 +71,7 @@
                              <td><?php echo $dat->alamat ?></td>
                            </tr>
                            <tr>
-                               <td colspan="2">Permintaan</td>
+                               <td colspan="2">Daftar Permintaan</td>
                                
                            </tr>
                            <tr>
