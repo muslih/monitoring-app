@@ -36,7 +36,7 @@
 </head>
 <body>
 
-    <?php //ob_start(); ?>
+    <?php ob_start(); ?>
     <?php include 'config/koneksi.php';?>
     <div id="wrapper">
         <?php  if (empty($_SESSION['nama'])){
