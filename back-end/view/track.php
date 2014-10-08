@@ -5,12 +5,12 @@
                 <div class="panel-heading">
                     <h3 class="panel-title">Lacak permintaan</h3>
                     <?php 
-                    $produks = Produk::all();
-                    if($produks){
-                        echo "Bisa konek ke dalam database";
-                    }else{
-                        echo "G bisa konek ke database";
-                    }
+                    // $produks = Produk::all();
+                    // if($produks){
+                    //     echo "Bisa konek ke dalam database";
+                    // }else{
+                    //     echo "G bisa konek ke database";
+                    // }
                      ?>
                 </div>
                 <div class="panel-body">

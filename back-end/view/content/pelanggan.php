@@ -1,7 +1,7 @@
 <!-- tambah data -->
 <?php 
 if (isset($_POST['simpan']) && $_POST['simpan'] == 'Tambah') {
-    $tipe_id = $_POST['tipe_id'];
+    // $tipe_id = $_POST['tipe_id'];
     $gelar = $_POST['gelar'];
     $nama = $_POST['nama'];
     $gender_id =$_POST['gender_id'];
@@ -19,7 +19,7 @@ if (isset($_POST['simpan']) && $_POST['simpan'] == 'Tambah') {
     // lakukan penyimpanan ke dalam database
     
     if (Pelanggan::create(array(
-        "tipe_id" => $tipe_id,
+        // "tipe_id" => $tipe_id,
         "gelar" => $gelar,
         "nama" => $nama,
         "gender_id" => $gender_id,
