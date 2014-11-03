@@ -100,7 +100,7 @@
     <div class="col-lg-8">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <i class="fa fa-bar-chart-o fa-fw"></i> Pelanggan Terbaru
+                <i class="fa fa-bar-chart-o fa-fw"></i> Permintaan Terbaru
                 <div class="pull-right">
                     <div class="btn-group">
                       <a class="btn btn-default btn-xs dropdown-toggle" href="?page=pelanggan">Detail pelanggan</a>
@@ -115,7 +115,7 @@
                         <thead>
                             <tr>
                                  <th>No</th>
-                                 <th>Tipe</th>
+                                 <th>Bana</th>
                                  <th>Nomor</th>
                                  <th>Waktu</th>
                             </tr> 
@@ -123,19 +123,19 @@
                         
                         <tbody>
                             <?php $no = 1 ?>
-                            <?php $permintaans = Permintaan::all() ?>
-                            <?php foreach ($permintaans as $permintaan) { ?>
+                            <?php $pelanggans = Pelanggan::all() ?>
+                            <?php foreach ($pelanggans as $pelanggan) { ?>
                             <tr>
                                 <td><?php echo $no ?></td>
                                 
                                 <td>
-                                    <?php echo $permintaan->pelanggan->tipe->detail_tipe ?>
+                                    <?php echo $pelanggan->nama ?>
                                 </td>
                                 <td>
-                                    <?php echo $permintaan->pelanggan->no_pelanggan ?>
+                                    <?php echo $pelanggan->no_pelanggan ?>
                                 </td>
                                 <td>
-                                    <?php echo $permintaan->dibuat->format('d M Y ')?>
+                                    <?php echo $pelanggan->dibuat->format('d M Y ')?>
                                 </td>
                             </tr>
                             <?php $no++ ?>
