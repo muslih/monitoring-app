@@ -12,7 +12,7 @@ if (isset($_POST['simpan']) && $_POST['simpan'] == 'Tambah') {
     $kontak = $_POST['kontak'];
     $alamat_tambahan = $_POST['alamat_tambahan'];
     // nomor acak
-    $no_pelanggan = substr(number_format(time() * mt_rand(),0,'',''),0,7);
+    $no_pelanggan = substr(number_format(time() * mt_rand(),0,'',''),0,4);
 
     // echo "dipost ment";
 
@@ -29,7 +29,7 @@ if (isset($_POST['simpan']) && $_POST['simpan'] == 'Tambah') {
         "kelurahan" => $kelurahan,
         "kontak" => $kontak,
         "alamat_tambahan" => $alamat_tambahan,
-        "no_pelanggan" => $no_pelanggan
+        "no_pelanggan" => "335".$no_pelanggan
       ))){
         header('location:index.php?page=pelanggan&pesansukses=true');
     }else{
