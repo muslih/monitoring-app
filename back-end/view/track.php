@@ -72,6 +72,7 @@
                            </tr>
                            <tr>
                                <td colspan="2">Daftar Permintaan</td>
+                              <?php //print_r($dat->permintaan) ?>
                                
                            </tr>
                            <tr>
@@ -80,13 +81,14 @@
                                     <ol style="padding-left:1em">
                                     
                                     <?php 
-                                   foreach ($dat->permintaans as $permintaan){
+                                   foreach ($dat->permintaan as $permintaan){
                                         echo "<li>".$permintaan->produk->nama_produk.'<br>';
                                         echo "<ul style='padding-left:1em'>";
                                         foreach (array_reverse($permintaan->statuspermintaan) as $status) { 
                                           echo "<li>Diupdate pada <strong>".$status->dibuat->format('d M Y ')."</strong>";
-                                          echo status($status->status);
-                                          echo "<p>".$status->pesan."</p>";
+                                          echo statuslabel($status->status);
+
+                                          echo "<pre style='margin-top:15px'>Pesan : ".$status->pesan."</pre>";
                                           echo "<br/></li>";
                                         }
                                         echo "</ul>";

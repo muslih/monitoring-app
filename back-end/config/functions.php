@@ -23,6 +23,17 @@ function status($stat){
     echo "<div class=\" alert-info btn-xs\">undefined</div>";
   }
 }
+function statuslabel($stat){
+  if($stat == 2 ){
+    echo "<span class=\" alert-success btn-xs\">selesai</span>";
+  }elseif($stat == 1 ) {
+   echo  "<span class=\" alert-warning btn-xs\">proses</span>";
+  }elseif($stat == 0 ){
+    echo "<span class=\" alert-danger btn-xs\">belum</span>";
+  }else{
+    echo "<span class=\" alert-info btn-xs\">undefined</span>";
+  }
+}
 
 function level($lev){
   if ($lev == 0) {
